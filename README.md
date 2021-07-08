@@ -1,17 +1,40 @@
-# supabase_flutter
+# supabaseを使ったflutterアプリのサンプル  
+  
+# intro
+supabaseに触れるためにflutterアプリを作成してみる  
+実装する機能はログイン・ログアウト・新規登録  
 
-A new Flutter project.
+参考に使ったサイト  
+https://medium.com/geekculture/flutter-authentication-flow-with-supabase-opensource-firebase-alternative-438646c5703a  
 
-## Getting Started
+# supabase の設定  
+app.supabase.io にアクセスしてログインをします。  
+新規プロジェクトからプロジェクトを作成します。（データベースが起動するまで時間がかかります。)
 
-This project is a starting point for a Flutter application.
+Authentication→Settings→Generalから  
+処理を簡単にするためにDisable email confirmationsを有効化します。  
 
-A few resources to get you started if this is your first Flutter project:
+次にAPI周りの情報をコピーします  
+Settigs→API→Configから  
+URLとanon publicに書いてあるKeyをコピーします  
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+lib/main.dartの13,14行目付近のSUPABASE_URLとSUPABASE_ANON_KEYを書き換えます。  
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# supabase_sample
+````:bash
+#実行したコマンド
+flutter pub add supabase
+flutter pub add get_it
+flutter pub upgrade supabase
+flutter pub add shared_preferences
+
+# flutter pub get
+````
+
+シミュレータ等を起動してflutter runを実行します。
+
+````:bash
+open -a Simulator
+flutter run
+````
+
+
